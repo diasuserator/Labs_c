@@ -5,6 +5,8 @@
 #include <algorithm>
 using namespace std;
 
+// Богдан Дмитрий Валерьевич, группа 30331, лабораторная №2, вариант №2, 5 задач.
+
 int funTask1() {
 	cout << endl << "Task 1." << endl;
 	int x = 0;
@@ -172,7 +174,7 @@ int main() {
 	//funTask2();
 	//funTask3();
 	//funTask4();
-	funTask5();
+	//funTask5();
 
 
 	system("pause");
