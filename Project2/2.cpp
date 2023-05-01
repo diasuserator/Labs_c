@@ -124,24 +124,43 @@ int funTask4() {
 
 int funTask5() {
 	cout << endl << "Task 5." << endl;
-	int n = 0, x = 0, y = 0, z = 0;
+	float n = 0, x = 0, y = 0, z = 0;
 	cout << "Input x" << endl;
 	cin >> x;
 	cout << "Input y" << endl;
 	cin >> y;
 	cout << "Input z" << endl;
 	cin >> z;
-	
-	int min = min_element((x+y), (y-z));
-	int max = max_element(x, y);
-	
-	if ((x != y != z) && (max != 0)) {
+
+	float c1 = x + y;
+	float c2 = y - z;
+
+	float min = c1;
+
+	if (c2 < c1) {
+		min = c2;
+	}
+
+	float max = x;
+
+	if (y > x) {
+		max = y;
+	}
+
+	if ((x != y) && (y != z) && (z != x) && (max != 0)) {
 		n = min / max;
+		cout << "Result" << endl << "n= " << n << endl;
+
 	}
-	else {
-		cout << "try again" << endl;
+
+	if (max == 0) {
+		cout << "Try again. Division by zero is not possible. " << endl;
 	}
-	
+	if ((x == y) || (y == z) || (z == x)) {
+		cout << "Try again. 'x', 'y' or 'z' value is repeated. " << endl;
+	}
+
+		
 	return 0;
 }
 
