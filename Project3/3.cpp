@@ -68,13 +68,36 @@ int fTask3_2()
 	return 0;
 }
 
+void fTask3_3() {
+	cout << "Task 3 of Lab 3." << endl;
+	const double a = 0.1, b = 1.0, h = 0.1;
+	const int n = 20;
+	double x = a;
+	double Y = 0, S = 0;
+
+	line(63);
+	printf("| %5c | %15s | %15s | %15s |\n", 'x', "S(x)", "Y(x)", "|Y(x)-S(x)|");
+	line(63);
+
+	while (x <= b) {
+		Y = x / 2;
+		S = 0;
+		for (int k = 1; k < n; k++) {
+			S += (pow((-1), (k + 1))) * (sin(k * x) / k);
+		}
+		printf("| %5.3f| %15.13f| %15.13f| %15.13f|\n", x, S, Y, abs(Y - S));
+		line(63);
+		x += h;
+	}
+
+	system("pause");
+}
 
 
 int main() {
 	//fTask3_1();
 	//fTask3_2();
-
-	system("pause");
+	//fTask3_3();
 	return 0;
 }
 
