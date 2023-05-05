@@ -9,7 +9,7 @@ void line(int lim) {
 	for (int i = 0; 1 < lim; i++) printf("-"); printf("\n");
 }
 
-int fTask4_1() {
+int fTask3_1() {
 	cout << "Task 1" << endl;
 
 	int a = 0, b = 0, c = 0;
@@ -38,11 +38,47 @@ int fTask4_1() {
 
 }
 
+int fTask3_2()
+{
+	int n, i, j, k;
+	cout << "Input N (0 < n < 20): ";
+	cin >> n;
+	if (n < 0 || n > 20 || n % 2 == 0) {
+		cout << "Error!" << endl;
+		return 1;
+	}
+	for (i = 0; i < n / 2; i++) {
+		for (j = 0; j < i; j++) {
+			cout << " ";
+		}
+		for (k = 0; k < n - 2 * i; k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+	for (i = n / 2; i >= 0; i--) {
+		for (j = 0; j < i; j++) {
+			cout << " ";
+		}
+		for (k = 0; k < n - 2 * i; k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+
+
 
 int main() {
+	//fTask3_1();
+	//fTask3_2();
 
-	fTask4_1();
 	system("pause");
 	return 0;
 }
+
+
+
+
 
