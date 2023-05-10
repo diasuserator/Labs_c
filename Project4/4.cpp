@@ -83,18 +83,40 @@ void fTask4_1() {
 		}
 
 	cout << "9. longest sequence of days with the same temperature (number of days and temperature): " << b9+1 << ", " << temp << endl;
+	}
 
 
+void fTask4_2() {
+	cout << "Lab_4 Task_2" << endl;
+	const int N = 100;
+	int Array[N];
+	int a = 0, b = 0;
+	cout << "Input array N: " << endl;
+	cin >> a >> b;
+
+	for (int i = a; i < b; i++)
+		Array[i] = i + 1;
+
+	for (int i = 0; i < N; i++) cout << Array[i] << "\t" << endl;
+
+	int OT = 0;
+	int K = 0;
+	cout << "Input K: ";
+	cin >> K;
+
+	for (int i = 0; i < N; i++) {
+		if (Array[i] > K) {
+			OT += 1;
+		}
+	}	
+	cout << "The number of elements is greater than 'K' = " << OT << endl;
 }
 
 
 
-
-
-
 int main() {
-	fTask4_1();
-	//fTask4_2();
+	//fTask4_1();
+	fTask4_2();
 	//fTask4_3();
 	return 0;
 }
