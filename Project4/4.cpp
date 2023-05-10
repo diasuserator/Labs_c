@@ -113,10 +113,51 @@ void fTask4_2() {
 }
 
 
+void fTask4_3() {
+	cout << "Lab_4 Task_3" << endl;
+	const int SIZE = 10;
+	int m[SIZE][SIZE];
+	int a = 0, b = 0;
+	cout << "Input array m: " << endl;
+	cin >> a >> b;
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		for (int j = 0; j < SIZE; j++)
+		{
+			m[i][j] = a + rand() % (b - a + 1);
+			cout << m[i][j]<<"\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	for (int i = 0; i < SIZE; i++)
+		for (int j = 0; j < SIZE / 2; j++)
+		{
+			int tmp = m[i][j];
+			m[i][j] = m[i][SIZE - j - 1];
+			m[i][SIZE - j - 1] = tmp;
+		}
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		for (int j = 0; j < SIZE; j++)
+		{
+			cout << m[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+
+
+}
+
+
 
 int main() {
 	//fTask4_1();
-	fTask4_2();
-	//fTask4_3();
+	//fTask4_2();
+	fTask4_3();
 	return 0;
 }
