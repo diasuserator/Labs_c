@@ -113,7 +113,7 @@ void fTask4_2() {
 }
 
 
-void fTask4_3() {
+void fTask4_4() {
 	cout << "Lab_4 Task_3" << endl;
 	const int SIZE = 10;
 	int m[SIZE][SIZE];
@@ -153,11 +153,47 @@ void fTask4_3() {
 
 }
 
+void fTask4_3() {
+	cout << "Lab_4 Task_3" << endl;
+	const int SIZE = 10;
+	int m[SIZE][SIZE];
+	int t = 1;     
+	int k = 0;
+	int a = 0, b = 0;
+	cout << "Input array m: " << endl;
+	cin >> a >> b;
+	cout << endl;
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		for (int j = 0; j < SIZE; j++)
+		{
+			m[i][j] = a + rand() % (b - a + 1);
+			cout << m[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	
+
+	for (int j = 0; j < SIZE; j++) {
+		t = 1;
+		for (int i = 0; i < SIZE; i++) {
+			t = t * m[i][j];
+		}
+		if (t != 0) k++;
+	}
+	cout << "\nNumber of columns that do not contain any null element = " << k << ".\n" << endl;
+
+}
+
+
+
 
 
 int main() {
 	//fTask4_1();
 	//fTask4_2();
-	fTask4_3();
+	//fTask4_3();
+	//fTask4_4();
 	return 0;
 }
