@@ -42,6 +42,21 @@ bool fun2(int a, int b) {
 
 void fun3(double, double, double);
 
+/*
+Функция 4 получает в качестве аргументов - одномерный статический массив и его размер,
+возвращает - Максимальный элемент массива
+*/
+
+int findMaxElement(int arr[], int size) {
+	int max = arr[0];
+	for (int i = 1; i < size; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
 
 
 int main() {
@@ -59,7 +74,7 @@ int main() {
 	else {
 		cout << "numbers have different signs" << endl;
 	}
-*/
+
 
 	cout << "Function (3) is start. \n";
 	cout << "Please, Input 3 real numbers :";
@@ -67,7 +82,18 @@ int main() {
 	cin >> y1 >> y2 >> y3;
 	fun3(y1, y2, y3);
 	//printf("Numbers : %f , %f , %f \n", y1, y2, y3); // cout << " Numbers " << y1 << " " << y2 << " " << y3 << endl;
+*/
 
+	int size;
+	cout << "Enter the size of the array: ";
+	cin >> size;
+	int* arr = new int[size];
+	cout << "Enter array elements: ";
+	for (int i = 0; i < size; i++) {
+		cin >> arr[i];
+	}
+	int maxElement = findMaxElement(arr, size);
+	cout << "Maximum array element: " << maxElement << endl;
 	return 0;
 }
 
