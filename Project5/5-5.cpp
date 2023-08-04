@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int x1, x2;
@@ -47,7 +48,7 @@ void fun3(double, double, double);
 возвращает - Максимальный элемент массива
 */
 
-int findMaxElement(int arr[], int size) {
+int fun4(int arr[], int size) {
 	int max = arr[0];
 	for (int i = 1; i < size; i++) {
 		if (arr[i] > max) {
@@ -58,11 +59,37 @@ int findMaxElement(int arr[], int size) {
 }
 
 
+/*
+Функция 5. Одномерный массив — это суммы столбцов двухмерного
+*/
+
+vector<int> fun5() {
+	int rows, cols;
+	cout << "Enter the number of lines: ";
+	cin >> rows;
+	cout << "Enter the number of columns: ";
+	cin >> cols;
+
+	vector<vector<int>> arr(rows, vector<int>(cols, 0));
+	vector<int> result(cols, 0);
+
+	cout << "Enter the elements of a two - dimensional array: " << endl;
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			cin >> arr[i][j];
+			result[j] += arr[i][j];
+		}
+	}
+
+	return result;
+}
+
+
 
 int main() {
-	//fun1();
+	fun1();
 
-/*
+	cout << "Function (2) is start. \n";
 	int num1, num2;
 	cout << "enter the first number: ";
 	cin >> num1;
@@ -82,8 +109,10 @@ int main() {
 	cin >> y1 >> y2 >> y3;
 	fun3(y1, y2, y3);
 	//printf("Numbers : %f , %f , %f \n", y1, y2, y3); // cout << " Numbers " << y1 << " " << y2 << " " << y3 << endl;
-*/
 
+	
+
+	cout << "Function (4) is start. \n";
 	int size;
 	cout << "Enter the size of the array: ";
 	cin >> size;
@@ -92,8 +121,21 @@ int main() {
 	for (int i = 0; i < size; i++) {
 		cin >> arr[i];
 	}
-	int maxElement = findMaxElement(arr, size);
+	int maxElement = fun4(arr, size);
 	cout << "Maximum array element: " << maxElement << endl;
+
+
+	
+	cout << "Function (5) is start. \n";
+	vector<int> result = fun5();
+
+	cout << "Column sums of a two-dimensional array: ";
+	for (int i = 0; i < result.size(); i++) {
+		cout << result[i] << " ";
+	}
+	cout << endl;
+
+	
 	return 0;
 }
 
